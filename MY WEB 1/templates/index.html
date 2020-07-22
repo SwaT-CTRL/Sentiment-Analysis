@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sentiment Analyzer</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  	<link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+		<link rel="icon" href="static\Vector.svg">
+</head>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Roboto Condensed"!important;
+}
+
+body{
+	background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.6)),url(static/images/admin.jpg);
+	background-position: center;
+    background-size: cover;
+    overflow-x: hidden;
+    position: relative;
+    overflow-y: hidden;
+    height: 100vh;
+}
+
+.login-box{
+    max-width: 700px;
+    float: none;
+    margin: 150px auto;
+}
+
+h1{
+	color: #fff;
+	text-align: center;
+	font-family: "Roboto Condensed"!important;
+}
+
+.form-control{
+    background-color: transparent !important;
+}
+
+.btn{
+	color: #fff!important;
+	padding: 10px 20px!important;
+    border: 0!important;
+    background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.6))!important;
+    font-weight: bold!important;
+    cursor: pointer!important;
+    left: 50%;
+}
+
+</style>
+<body>
+
+	<div class="login-box">
+		<h1 class="font-weight-bold">Sentiment Analyzer</h1>
+		<form action = "/predict" method = "POST" class="mt-5">
+            <div class="form-group">
+                <label class="text-white">Write a Review</label>
+                <input type="text" name="review" class="form-control text-white" required>
+            </div>
+            <button type="submit" name="sub" class="btn" value="submit">Check Prediction</button>
+        </form>
+    </div>
+
+    <div class="b1">
+        <center class="text-white">
+					<h3>{{prediction_text}}</h3>
+        </center>
+    </div>
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
